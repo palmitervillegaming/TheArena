@@ -7,7 +7,7 @@ using System.IO;
 
 public class GameControl : MonoBehaviour {
 
-    public static GameControl control;
+    public static GameControl instance;
     private String GameDataPath
     {
         get { return Application.persistentDataPath + "/userdata.dat"; }
@@ -17,12 +17,12 @@ public class GameControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		if (control == null)
+		if (instance == null)
         {
             DontDestroyOnLoad(gameObject);
-            control = this;
+            instance = this;
             Load();
-        } else if(control != this)
+        } else if(instance != this)
         {
             Destroy(gameObject);
         }
