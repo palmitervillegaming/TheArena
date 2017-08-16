@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BattleControl : MonoBehaviour
 {
-
     public static BattleControl instance;
     public BattleData data;
+    public Ally currentPlayer;
+    public Enemy target;
+    public HashSet<Enemy> enemies;
+    public HashSet<Ally> allies;
 
     // Use this for initialization
     void Awake()

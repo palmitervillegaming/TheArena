@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class Player : MonoBehaviour {
 
     public float speedx;
     public float speedy;
     public Rigidbody2D rb;
+    public BaseCharacter character;
 
 	// Use this for initialization
 	void Start () {

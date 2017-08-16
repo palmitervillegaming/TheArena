@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<BaseCharacterContainer>
+	<BaseCharacters>
+		<BaseCharacter CharacterCode="MAIN" BaseName="Poo" >
+			<BaseStats BaseHP ="120" BaseATK="10" BaseSTR="10" BaseINT="5">
+			</BaseStats>
+		</BaseCharacter>
+  </BaseCharacters>
+</BaseCharacterContainer>
