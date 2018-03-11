@@ -24,6 +24,7 @@ public class BaseCharacterRepository : Repository
             {
                 characters.Add(character.code, character);
             }
+            loaded = true;
         }
     }
 
