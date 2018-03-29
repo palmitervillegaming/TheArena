@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Classes.Battle;
+using System.Collections.Generic;
+using Controls;
 
 public class Enemy : Combatant
 {
-
-    // Use this for initialization
-    void Start()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        BattleControl.Instance.EnterBattle(this);
     }
 }

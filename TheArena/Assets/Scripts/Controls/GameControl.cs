@@ -9,17 +9,54 @@ using Controls;
 
 namespace Controls {
     public class GameControl : MonoBehaviour {
+        public GameControl() : base()
+        {
+            currentAllies = new Dictionary<int, Ally>();
+        }
 
-        public static GameControl instance;
+        private static GameControl instance;
+        public static GameControl Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GameControl();
+                }
+                return instance;
+            }
+
+            set
+            {
+                instance = value;
+            }
+        }
+
         private String GameDataPath
         {
             get { return Application.persistentDataPath + "/userdata.dat"; }
         }
 
         public GameData data = new GameData();
-
+        public Dictionary<int, Ally> currentAllies = new Dictionary<int, Ally>();
         public bool IsTesting = true;
         public bool isXml = true;
+        private Player currentPlayer;
+        public Player CurrentPlayer
+        {
+            get
+            {
+                return currentPlayer;
+            }
+            set
+            {
+                currentPlayer = value;
+                if (!currentAllies.ContainsKey(currentPlayer.GetInstanceID()))
+                {
+                    currentAllies.Add(currentPlayer.GetInstanceID(), value);
+                }
+            }
+        }
 
 
         public void NewGame()
@@ -38,12 +75,12 @@ namespace Controls {
 
         // Use this for initialization
         void Awake() {
-            if (instance == null)
+            if (Instance == null)
             {
                 DontDestroyOnLoad(gameObject);
-                instance = this;
+                Instance = this;
                 Load();
-            } else if (instance != this)
+            } else if (Instance != this)
             {
                 Destroy(gameObject);
             }

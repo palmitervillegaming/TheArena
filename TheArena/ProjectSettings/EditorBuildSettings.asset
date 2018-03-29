@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/SceneTraverse/TestW.unity
     guid: 573e28f0fe389bc42830f837d86a38cf
-  - enabled: 1
-    path: Assets/Scenes/Test/SceneTraverse/TestMenu.unity
-    guid: 9bea3401ec783ae48852c32bc892b838
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Test/SceneTraverse/TestN.unity
     guid: 01dbbb313a5ea0844a68f6dbdbd84c87
@@ -44,3 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/SceneTraverse/TestS.unity
     guid: df8cbd7e468ad1f428cb082efcfe2e67
+  - enabled: 1
+    path: Assets/Scenes/Test/Battle/BattleTestScene.unity
+    guid: b6c9634cfbd40e646af55d5cb26092fa

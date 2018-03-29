@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Classes.Battle;
 
 public class Ally : Combatant
 {

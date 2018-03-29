@@ -10,12 +10,12 @@ namespace Controls
     {
         public static Dictionary<string, Player> loadedChars = new Dictionary<string, Player>();
 
-        public static void LoadPlayer(string resourcePath, float x, float y)
+        public static Player LoadPlayer(string resourcePath, float x, float y)
         {
+            Player p;
             try
             {
-                Player p;
-                if (loadedChars.ContainsKey(resourcePath) && !loadedChars[resourcePath].isDead)
+                if (loadedChars.ContainsKey(resourcePath) && !loadedChars[resourcePath].IsDead)
                 {
                     p = loadedChars[resourcePath];
                 }
@@ -29,13 +29,16 @@ namespace Controls
             } catch (MissingReferenceException e)
             {
                 loadedChars.Remove(resourcePath);
-                LoadPlayer(resourcePath, x, y);
+                p = LoadPlayer(resourcePath, x, y);
             }
+            return p;
         }
         
-        public static void LoadMain(float x, float y)
+        public static Player LoadMain(float x, float y)
         {
-            LoadPlayer("Prefab/Characters/Poo", x, y);
+            Player p =  LoadPlayer("Prefab/Characters/Poo", x, y);
+            GameControl.Instance.CurrentPlayer = p;
+            return p;
         }
     }
 } 

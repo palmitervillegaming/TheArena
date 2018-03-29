@@ -23,7 +23,7 @@ namespace Controls.Scene
 
         public static void LoadCharacter(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            CharacterLoader.LoadMain(currentTransition.x, currentTransition.y);
+            GameControl.Instance.CurrentPlayer = CharacterLoader.LoadMain(currentTransition.x, currentTransition.y);
         }
     }
 }
