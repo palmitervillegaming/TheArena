@@ -9,27 +9,10 @@ using Controls;
 
 namespace Controls {
     public class GameControl : MonoBehaviour {
-        public GameControl() : base()
-        {
-            currentAllies = new Dictionary<int, Ally>();
-        }
 
-        private static GameControl instance;
         public static GameControl Instance
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new GameControl();
-                }
-                return instance;
-            }
-
-            set
-            {
-                instance = value;
-            }
+            get;set;
         }
 
         private String GameDataPath
@@ -70,7 +53,8 @@ namespace Controls {
 
         private void NewGameLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            CharacterLoader.LoadMain(0, 0);
+            Player p = CharacterLoader.LoadMain(0, 0);
+            CurrentPlayer = p;
         }
 
         // Use this for initialization

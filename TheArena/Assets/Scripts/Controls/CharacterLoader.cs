@@ -36,7 +36,7 @@ namespace Controls
         
         public static Player LoadMain(float x, float y)
         {
-            Player p =  LoadPlayer("Prefab/Characters/Poo", x, y);
+            Player p =  LoadPlayer("Prefab/Characters/Main", x, y);
             GameControl.Instance.CurrentPlayer = p;
             return p;
         }

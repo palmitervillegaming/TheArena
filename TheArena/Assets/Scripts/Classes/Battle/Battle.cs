@@ -6,7 +6,8 @@ namespace Assets.Scripts.Classes.Battle
 {
     public class Battle
     {
-        public Dictionary<int, Enemy> enemies;
-        public Dictionary<int, Ally> allies;
+        public Dictionary<int, Enemy> enemies = new Dictionary<int, Enemy>();
+        public Dictionary<int, Ally> allies = new Dictionary<int, Ally>();
+
     }
 }

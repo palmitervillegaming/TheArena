@@ -17,6 +17,7 @@ public class Player : Ally, IDisposable {
     void FixedUpdate()
     {
         Vector2 velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        Vector2 newPosition = rb.position + velocity * Time.fixedDeltaTime;
+        rb.MovePosition(newPosition);
     }
 }

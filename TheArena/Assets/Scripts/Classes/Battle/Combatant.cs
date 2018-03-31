@@ -17,6 +17,7 @@ namespace Assets.Scripts.Classes.Battle
         }
 
         public float speed;
+        public int health;
 
         public enum CombatantRole
         {

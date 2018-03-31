@@ -8,6 +8,9 @@ public class Enemy : Combatant
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        BattleControl.Instance.EnterBattle(this);
+        if (other.GetComponent<Ally>() != null)
+        {
+            BattleControl.Instance.EnterBattle(this);
+        }
     }
 }

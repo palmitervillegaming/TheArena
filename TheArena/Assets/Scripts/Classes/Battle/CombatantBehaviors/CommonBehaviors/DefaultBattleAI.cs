@@ -12,11 +12,11 @@ namespace Assets.Scripts.Classes.Battle.CombatantBehaviors.CommonBehaviors
         public DefaultBattleAI(Combatant combatant)
         {
             Combatant = combatant;
+            RB = combatant.GetComponent<Rigidbody2D>();
         }
 
         public DefaultBattleAI(Combatant combatant, Combatant initialTarget)
         {
-
             Combatant = combatant;
             RB = combatant.GetComponent<Rigidbody2D>();
             Target = initialTarget;
@@ -41,6 +41,7 @@ namespace Assets.Scripts.Classes.Battle.CombatantBehaviors.CommonBehaviors
 
         public virtual void BehaviorUpdate()
         {
+            GetTarget();
             Vector2 next = LocationUtilities.NextLocation(Combatant.transform.position, Target.transform.position, Combatant.speed);
             RB.MovePosition(next);
         }

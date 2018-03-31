@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Classes.Battle.CombatantBehaviors.AllyBehaviors;
 using Assets.Scripts.Classes.Battle.CombatantBehaviors.EnemyBehaviors;
+using Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,12 @@ namespace Assets.Scripts.Classes.Battle
 
         public void StartBattle()
         {
+            Battle = Battle ?? new Battle();
+
+            //TODO add entire part to battle
+            Player p = GameControl.Instance.CurrentPlayer;
+            Battle.allies.Add(p.GetInstanceID(), p);
+
             Battle.allies.Values.ToList().ForEach(ally =>
             {
                 ally.AttachBehavior(new DefaultAllyAI(ally));
@@ -49,6 +56,8 @@ namespace Assets.Scripts.Classes.Battle
 
         public void EnterBattle(Enemy enemy)
         {
+            Battle = Battle ?? new Battle();
+
             Battle.enemies.Add(enemy.GetInstanceID(), enemy);
 
             if (InProgress)

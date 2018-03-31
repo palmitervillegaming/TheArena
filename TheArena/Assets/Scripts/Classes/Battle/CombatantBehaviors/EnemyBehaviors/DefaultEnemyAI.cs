@@ -15,7 +15,7 @@ namespace Assets.Scripts.Classes.Battle.CombatantBehaviors.EnemyBehaviors
         public override void GetTarget()
         {
             //TODO implement something smarter than this based on distance, priorities?
-            Target = BattleControl.Instance.Battle.allies.First().Value;
+            Target = Target ?? BattleControl.Instance.Battle.allies.First().Value;
         }
     }
 }
