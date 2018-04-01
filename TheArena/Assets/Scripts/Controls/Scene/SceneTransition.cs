@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Controls.Scene
+namespace Assets.Scripts.Controls.Scene
 {
     class SceneTransition : MonoBehaviour
     {
-        public float x;
-        public float y;
+        public int sceneX;
+        public int sceneY;
         public string sceneName;
-
-        private void OnCollisionEnter2D(Collision2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
-            SceneController.MakeTransition(this);
+            if (collision.GetComponent<Player>() != null)
+            {
+                StaticScene.SceneTransitionMade(sceneX, sceneY);
+            }
         }
     }
 }

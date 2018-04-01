@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Controls.Scene
+namespace Assets.Scripts.Controls.Scene
 {
     class SceneController : MonoBehaviour
     {
@@ -23,7 +24,7 @@ namespace Controls.Scene
 
         public static void LoadCharacter(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            GameControl.Instance.CurrentPlayer = CharacterLoader.LoadMain(currentTransition.x, currentTransition.y);
+            GameControl.Instance.CurrentPlayer = CharacterLoader.LoadMain(currentTransition.sceneX, currentTransition.sceneY);
         }
     }
 }

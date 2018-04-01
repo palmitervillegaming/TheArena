@@ -14,7 +14,7 @@ namespace Assets.Scripts.Controls.Test.Tests
         {
             get
             {
-                return "BattleTestScene";
+                return "StaticScene";
             }
 
             set
@@ -28,12 +28,8 @@ namespace Assets.Scripts.Controls.Test.Tests
             //Put character in it
             CharacterLoader.LoadMain(0, 0);
             SceneManager.LoadScene(SceneName);
-            SceneManager.sceneLoaded += SceneLoaded;
         }
 
-        private void SceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
-        {
-            CharacterLoader.LoadMain(4, 0);
-        }
+
     }
 }

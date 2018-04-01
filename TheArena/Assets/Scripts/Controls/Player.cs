@@ -1,4 +1,5 @@
-﻿using Controls;
+﻿using Assets.Scripts.Controls.Camera;
+using Controls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ public class Player : Ally, IDisposable {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        gameObject.AddComponent<GameCamera>();
 	}
 
     void FixedUpdate()

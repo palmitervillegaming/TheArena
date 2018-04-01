@@ -58,7 +58,10 @@ namespace Assets.Scripts.Classes.Battle
         {
             Battle = Battle ?? new Battle();
 
-            Battle.enemies.Add(enemy.GetInstanceID(), enemy);
+            if (!Battle.enemies.ContainsKey(enemy.GetInstanceID()))
+            {
+                Battle.enemies.Add(enemy.GetInstanceID(), enemy);
+            }
 
             if (InProgress)
             {

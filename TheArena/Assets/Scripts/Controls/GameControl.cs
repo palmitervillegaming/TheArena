@@ -8,7 +8,12 @@ using UnityEngine.SceneManagement;
 using Controls;
 
 namespace Controls {
-    public class GameControl : MonoBehaviour {
+    public class GameControl {
+
+        static GameControl()
+        {
+            Instance = new GameControl();
+        }
 
         public static GameControl Instance
         {
@@ -57,19 +62,6 @@ namespace Controls {
             CurrentPlayer = p;
         }
 
-        // Use this for initialization
-        void Awake() {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;
-                Load();
-            } else if (Instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-
         private void OnDestroy()
         {
             Save();
@@ -84,7 +76,6 @@ namespace Controls {
             FileStream stream = File.Open(GameDataPath, FileMode.OpenOrCreate);
             formatter.Serialize(stream, data);
             stream.Close();
-            print("Saved!");
         }
 
         /// <summary>
@@ -96,7 +87,6 @@ namespace Controls {
             BinaryFormatter formatter = new BinaryFormatter();
             data = (GameData)formatter.Deserialize(stream);
             stream.Close();
-            print("Loaded!");
         }
 
     }
