@@ -16,8 +16,18 @@ namespace Assets.Scripts.Classes.Battle
             CombatantBehaviors = new List<CombatantBehavior>();
         }
 
+        public int currentHealth;
+        public int maxHealth;
+        public int currentMana;
+        public int maxMana;
+        public int currentStamina;
+        public int maxStamina;
+        public int currentFocus;
+        public int maxFocus;
+        public int atk;
+        public int spd;
+
         public float speed;
-        public int health;
 
         public enum CombatantRole
         {

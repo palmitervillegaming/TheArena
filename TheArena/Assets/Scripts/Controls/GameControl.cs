@@ -13,6 +13,7 @@ namespace Controls {
         static GameControl()
         {
             Instance = new GameControl();
+            LoadParty();
         }
 
         public static GameControl Instance
@@ -30,6 +31,8 @@ namespace Controls {
         public bool IsTesting = true;
         public bool isXml = true;
         private Player currentPlayer;
+        private Party party;
+        
         public Player CurrentPlayer
         {
             get
@@ -89,5 +92,9 @@ namespace Controls {
             stream.Close();
         }
 
+        public static void LoadParty()
+        {
+            //TEMP
+        }
     }
 }
