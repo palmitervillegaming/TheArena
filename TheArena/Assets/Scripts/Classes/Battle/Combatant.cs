@@ -16,6 +16,7 @@ namespace Assets.Scripts.Classes.Battle
             CombatantBehaviors = new List<CombatantBehavior>();
         }
 
+        public int level;
         public int currentHealth;
         public int maxHealth;
         public int currentMana;

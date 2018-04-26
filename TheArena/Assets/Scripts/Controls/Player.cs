@@ -9,6 +9,7 @@ public class Player : Ally, IDisposable {
 
     public Rigidbody2D rb;
     public BaseCharacter character;
+    public bool isActivePlayer = true;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,14 @@ public class Player : Ally, IDisposable {
 
     void FixedUpdate()
     {
-        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
-        Vector2 newPosition = rb.position + velocity * Time.fixedDeltaTime;
-        rb.MovePosition(newPosition);
+        if (isActivePlayer)
+        {
+            Vector2 velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
+            Vector2 newPosition = rb.position + velocity * Time.fixedDeltaTime;
+            rb.MovePosition(newPosition);
+        } else
+        {
+            //TODO make AI move player
+        }
     }
 }

@@ -13,7 +13,6 @@ namespace Controls {
         static GameControl()
         {
             Instance = new GameControl();
-            LoadParty();
         }
 
         public static GameControl Instance
@@ -31,7 +30,24 @@ namespace Controls {
         public bool IsTesting = true;
         public bool isXml = true;
         private Player currentPlayer;
+
         private Party party;
+        public Party Party
+        {
+            get
+            {
+                if (party == null)
+                {
+                    LoadParty();
+                }
+                return party;
+            }
+            set
+            {
+                party = value;
+
+            }
+        }
         
         public Player CurrentPlayer
         {
@@ -92,9 +108,13 @@ namespace Controls {
             stream.Close();
         }
 
-        public static void LoadParty()
+        public void LoadParty()
         {
             //TEMP
+            Player p = CharacterLoader.LoadMain(0, 0);
+            CurrentPlayer = p;
+            Party = new Party();
+            Party.CharacterConfiguration[0] = p;
         }
     }
 }
