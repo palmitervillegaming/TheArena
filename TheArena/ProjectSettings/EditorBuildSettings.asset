@@ -15,37 +15,37 @@ EditorBuildSettings:
     path: Assets/Scenes/Test/TestMenu.unity
     guid: 0ca3121f67c46744d92e41ebf5360187
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestC.unity
+    path: 
     guid: 501beb174140fcb4d8e64f4e39d78f13
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestSW.unity
+    path: 
     guid: f75e1220e3beaff47bcfad59b42c8b7b
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestNW.unity
+    path: 
     guid: c06533902f938234294300c2417bd7ed
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestW.unity
+    path: 
     guid: 573e28f0fe389bc42830f837d86a38cf
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestN.unity
+    path: 
     guid: 01dbbb313a5ea0844a68f6dbdbd84c87
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestE.unity
+    path: 
     guid: 616162c65b5777545bd040e5c0874a49
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestNE.unity
+    path: 
     guid: 120c90e85a4f3f9469a7d8278a59f4dd
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestSE.unity
+    path: 
     guid: e82982dbbf1934c4aa86a4c8dfb49fb0
   - enabled: 0
-    path: Assets/Scenes/Test/SceneTraverse/TestS.unity
+    path: 
     guid: df8cbd7e468ad1f428cb082efcfe2e67
   - enabled: 0
-    path: Assets/Scenes/Test/Battle/BattleTestScene.unity
+    path: 
     guid: b6c9634cfbd40e646af55d5cb26092fa
   - enabled: 1
     path: Assets/Scenes/Test/Scenes/Test_0_0.unity
@@ -74,3 +74,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StaticScene.unity
     guid: eef824ef5c9ca764185a6ba0c1c5e114
+  - enabled: 1
+    path: Assets/Scenes/Test/Menus/Game Menu/GameMenu.unity
+    guid: 4fc28ab70fda33541a746af902c40130

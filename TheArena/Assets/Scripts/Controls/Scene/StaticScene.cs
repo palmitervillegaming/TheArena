@@ -1,4 +1,5 @@
-﻿using Controls;
+﻿using Assets.Scripts.Controls.Keys;
+using Controls;
 using Loaders.Players;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,14 @@ namespace Assets.Scripts.Controls.Scene
         public static int playerStartY = 0;
         public static string activeScene;
         public static Dictionary<String, Vector2> loadedScenes = new Dictionary<String, Vector2>();
+        public static KeyController keyController;
 
         /**
          * Load the starting scene.
          */
         public void Start()
         {
+            keyController = gameObject.AddComponent<KeyController>();
             string activeScene = SceneMap.GetPartition(activeSceneX, activeSceneY);
             loadedScenes.Add(activeScene, new Vector2(activeSceneX, activeSceneY));
             SceneManager.LoadScene(activeScene, LoadSceneMode.Additive);
@@ -41,8 +44,8 @@ namespace Assets.Scripts.Controls.Scene
             activeScene = scene.name;
             SceneManager.sceneLoaded -= SceneLoaded;
             StaticScene.LoadAdjacentScenes();
-            PlayerLoader.LoadMain(playerStartX, playerStartY);
             SceneManager.SetActiveScene(scene);
+            GameControl.Instance.LoadParty();
         }
 
         /**

@@ -27,5 +27,15 @@ namespace Assets.Scripts.Controls.Scene
         {
             GameControl.Instance.Party.CurrentPlayer = PlayerLoader.LoadMain(currentTransition.sceneX, currentTransition.sceneY);
         }
+
+        public static void AddScene(String sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        }
+
+        public static void UnloadScene(String sceneName)
+        {
+            SceneManager.UnloadSceneAsync(sceneName);
+        }
     }
 }

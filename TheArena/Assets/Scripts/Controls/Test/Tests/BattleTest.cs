@@ -27,7 +27,6 @@ namespace Assets.Scripts.Controls.Test.Tests
         {
             //Load Scene
             //Put character in it
-            PlayerLoader.LoadMain(0, 0);
             SceneManager.LoadScene(SceneName);
         }
 
