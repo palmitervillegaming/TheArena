@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Loaders.Players;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,14 +20,14 @@ namespace Controls.Test.Tests
         {
             //Load Scene
             //Put character in it
-            CharacterLoader.LoadMain(0, 0);
+            PlayerLoader.LoadMain(0, 0);
             SceneManager.LoadScene(SceneName);
             SceneManager.sceneLoaded += SceneLoaded;
         }
 
         private void SceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            CharacterLoader.LoadMain(0, 0);
+            PlayerLoader.LoadMain(0, 0);
         }
     }
 }

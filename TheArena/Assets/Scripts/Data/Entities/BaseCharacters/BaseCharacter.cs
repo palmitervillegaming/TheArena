@@ -6,7 +6,7 @@ using System;
 [Serializable]
 public class BaseCharacter
 {
-    [XmlAttribute("CharacterCode")]
+    [XmlElement("CharacterCode")]
     public BaseCharacterRepository.CharacterCode code
     {
         get; set;

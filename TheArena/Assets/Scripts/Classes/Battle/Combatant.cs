@@ -7,8 +7,7 @@ using Assets.Scripts.Classes.Battle;
 namespace Assets.Scripts.Classes.Battle
 {
 
-
-    public class Combatant : MonoBehaviour, IDisposable
+    public class Combatant : MonoBehaviour
     {
 
         public Combatant() : base()
@@ -16,7 +15,20 @@ namespace Assets.Scripts.Classes.Battle
             CombatantBehaviors = new List<CombatantBehavior>();
         }
 
-        public int level;
+        public string characterName;
+        private int level;
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                level = value;
+                //TODO Scale stats based on level
+            }
+        }
         public int currentHealth;
         public int maxHealth;
         public int currentMana;
@@ -29,6 +41,8 @@ namespace Assets.Scripts.Classes.Battle
         public int spd;
 
         public float speed;
+        public float startX;
+        public float startY;
 
         public enum CombatantRole
         {
@@ -76,16 +90,6 @@ namespace Assets.Scripts.Classes.Battle
             {
                 behavior.BehaviorUpdate();
             }
-        }
-
-        public bool IsDead
-        {
-            get; set;
-        }
-
-        public void Dispose()
-        {
-            IsDead = true;
         }
     }
 }

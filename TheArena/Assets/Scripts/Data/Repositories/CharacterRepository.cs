@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 public class BaseCharacterRepository : Repository
 {
     public enum CharacterCode
     {
-        MAIN
+        [XmlEnum("MAIN")]
+        MAIN,
+        [XmlEnum("TEST_MAIN_1")]
+        TEST_MAIN_1
     }
 
     private const string XML_PATH = "/BaseCharacters.xml";

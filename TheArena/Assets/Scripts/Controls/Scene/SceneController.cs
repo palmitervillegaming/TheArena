@@ -1,4 +1,5 @@
 ﻿using Controls;
+using Loaders.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Assets.Scripts.Controls.Scene
 
         public static void LoadCharacter(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            GameControl.Instance.CurrentPlayer = CharacterLoader.LoadMain(currentTransition.sceneX, currentTransition.sceneY);
+            GameControl.Instance.Party.CurrentPlayer = PlayerLoader.LoadMain(currentTransition.sceneX, currentTransition.sceneY);
         }
     }
 }

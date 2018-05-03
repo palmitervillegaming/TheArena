@@ -26,17 +26,20 @@ namespace Assets.Scripts.Menus.MainMenu
             set
             {
                 ally = value;
-                nameText.text = ally.name;
-                levelText.text = LEVEL_LABEL + Convert.ToString(ally.level);
-                hpText.text = Convert.ToString(ally.currentHealth) + HEALTH_SEPARATOR + Convert.ToString(ally.maxHealth);
-                mpText.text = Convert.ToString(ally.currentMana) + HEALTH_SEPARATOR + Convert.ToString(ally.maxMana);
-                staminaText.text = Convert.ToString(ally.currentStamina) + HEALTH_SEPARATOR + Convert.ToString(ally.maxStamina);
-                focusText.text = Convert.ToString(ally.currentFocus) + HEALTH_SEPARATOR + Convert.ToString(ally.maxFocus);
-                hpBar.fillAmount = 1.0f * ally.currentHealth / ally.maxHealth;
-                mpBar.fillAmount = 1.0f * ally.currentMana / ally.maxMana;
-                stmBar.fillAmount = 1.0f * ally.currentStamina / ally.maxStamina;
-                focBar.fillAmount = 1.0f * ally.currentFocus / ally.maxFocus;
-                //TODO load sprite
+                if (ally != null)
+                {
+                    nameText.text = ally.characterName;
+                    levelText.text = LEVEL_LABEL + Convert.ToString(ally.Level);
+                    hpText.text = Convert.ToString(ally.currentHealth) + HEALTH_SEPARATOR + Convert.ToString(ally.maxHealth);
+                    mpText.text = Convert.ToString(ally.currentMana) + HEALTH_SEPARATOR + Convert.ToString(ally.maxMana);
+                    staminaText.text = Convert.ToString(ally.currentStamina) + HEALTH_SEPARATOR + Convert.ToString(ally.maxStamina);
+                    focusText.text = Convert.ToString(ally.currentFocus) + HEALTH_SEPARATOR + Convert.ToString(ally.maxFocus);
+                    hpBar.fillAmount = 1.0f * ally.currentHealth / ally.maxHealth;
+                    mpBar.fillAmount = 1.0f * ally.currentMana / ally.maxMana;
+                    stmBar.fillAmount = 1.0f * ally.currentStamina / ally.maxStamina;
+                    focBar.fillAmount = 1.0f * ally.currentFocus / ally.maxFocus;
+                    //TODO load sprite
+                }
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Classes.Battle.CombatantBehaviors.AllyBehaviors;
 using Assets.Scripts.Classes.Battle.CombatantBehaviors.EnemyBehaviors;
 using Controls;
+using Loaders.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace Assets.Scripts.Classes.Battle
             Battle = Battle ?? new Battle();
 
             //TODO add entire part to battle
-            Player p = GameControl.Instance.CurrentPlayer;
+            Player p = GameControl.Instance.Party.CurrentPlayer;
             Battle.allies.Add(p.GetInstanceID(), p);
 
             Battle.allies.Values.ToList().ForEach(ally =>

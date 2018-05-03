@@ -1,4 +1,5 @@
 ﻿using Controls;
+using Loaders.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Controls.Scene
             activeScene = scene.name;
             SceneManager.sceneLoaded -= SceneLoaded;
             StaticScene.LoadAdjacentScenes();
-            CharacterLoader.LoadMain(playerStartX, playerStartY);
+            PlayerLoader.LoadMain(playerStartX, playerStartY);
             SceneManager.SetActiveScene(scene);
         }
 

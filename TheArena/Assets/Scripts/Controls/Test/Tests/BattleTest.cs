@@ -1,4 +1,5 @@
 ﻿using Controls;
+using Loaders.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Controls.Test.Tests
         {
             //Load Scene
             //Put character in it
-            CharacterLoader.LoadMain(0, 0);
+            PlayerLoader.LoadMain(0, 0);
             SceneManager.LoadScene(SceneName);
         }
 

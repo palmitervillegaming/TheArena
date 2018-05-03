@@ -15,13 +15,13 @@ namespace Assets.Scripts.Controls.Camera
         void Start()
         {
             //Calculate and store the offset value by getting the distance between the player's position and camera's position.
-            offset = GameControl.Instance.CurrentPlayer != null ? transform.position - GameControl.Instance.CurrentPlayer.transform.position : transform.position;
+            offset = GameControl.Instance.Party.CurrentPlayer != null ? transform.position - GameControl.Instance.Party.CurrentPlayer.transform.position : transform.position;
             z = transform.position.z;
         }
 
         public void Update()
         {
-            transform.position = GameControl.Instance.CurrentPlayer != null ? GameControl.Instance.CurrentPlayer.transform.position : transform.position;
+            transform.position = GameControl.Instance.Party.CurrentPlayer != null ? GameControl.Instance.Party.CurrentPlayer.transform.position : transform.position;
             transform.position = new Vector3(transform.position.x, transform.position.y, z);
         }
     }

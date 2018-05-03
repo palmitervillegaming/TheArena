@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <BaseCharacterContainer>
 	<BaseCharacters>
-		<BaseCharacter CharacterCode="MAIN" BaseName="Main" >
-			<BaseStats BaseHP ="120" BaseATK="10" BaseSTR="10" BaseINT="5">
+		<BaseCharacter BaseName="Main" >
+      <CharacterCode>MAIN</CharacterCode>
+			<BaseStats BaseHP ="120" BaseATK="10" BaseSTR="10" BaseINT="5" BaseMP="100" BaseSTM="100" BaseFOC="100">
 			</BaseStats>
 		</BaseCharacter>
+  <BaseCharacter CharacterCode="TEST_MAIN_1" BaseName="TestMain1">
+    <CharacterCode>TEST_MAIN_1</CharacterCode>
+    <BaseStats BaseHP="110" BaseATK="8" BaseSTR="8" BaseINT="10" BaseMP="110" BaseSTM="80" BaseFOC="80">
+    </BaseStats>
+  </BaseCharacter>
   </BaseCharacters>
 </BaseCharacterContainer>

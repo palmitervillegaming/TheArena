@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
-using Controls;
+using Loaders.Party;
 
 namespace Controls {
     public class GameControl {
@@ -29,7 +28,6 @@ namespace Controls {
         public Dictionary<int, Ally> currentAllies = new Dictionary<int, Ally>();
         public bool IsTesting = true;
         public bool isXml = true;
-        private Player currentPlayer;
 
         private Party party;
         public Party Party
@@ -49,23 +47,6 @@ namespace Controls {
             }
         }
         
-        public Player CurrentPlayer
-        {
-            get
-            {
-                return currentPlayer;
-            }
-            set
-            {
-                currentPlayer = value;
-                if (!currentAllies.ContainsKey(currentPlayer.GetInstanceID()))
-                {
-                    currentAllies.Add(currentPlayer.GetInstanceID(), value);
-                }
-            }
-        }
-
-
         public void NewGame()
         {
             GameData data = new GameData();
@@ -77,8 +58,6 @@ namespace Controls {
 
         private void NewGameLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
-            Player p = CharacterLoader.LoadMain(0, 0);
-            CurrentPlayer = p;
         }
 
         private void OnDestroy()
@@ -110,11 +89,7 @@ namespace Controls {
 
         public void LoadParty()
         {
-            //TEMP
-            Player p = CharacterLoader.LoadMain(0, 0);
-            CurrentPlayer = p;
-            Party = new Party();
-            Party.CharacterConfiguration[0] = p;
+            Party = PartyLoader.LoadParty();
         }
     }
 }
