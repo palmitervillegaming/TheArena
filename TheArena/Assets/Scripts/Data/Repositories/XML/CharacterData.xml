@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CharacterDataContainer>
+  <Characters>
+    <Character CharacterCode="MAIN" Position="1" Level="2" />
+    <Character Resource="TEST_MAIN_1" Position="1" Level="3"/>
+  </Characters>
+</CharacterDataContainer>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PartyContainer>
+  <PartyReferences>
+    <PartyReference CharacterCode="MAIN" Position="0" IsActivePlayer="true" X="0" Y="0" >
+      <CharacterCode>MAIN</CharacterCode>
+    </PartyReference>
+    <PartyReference CharacterCode="TEST_MAIN_1" Position="1" IsActivePlayer="false" X="3" Y="3" >
+      <CharacterCode>TEST_MAIN_1</CharacterCode>
+    </PartyReference>
+  </PartyReferences>
+</PartyContainer>
